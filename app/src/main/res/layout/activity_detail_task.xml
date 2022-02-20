@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuEmployee.DetailTaskActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeimg"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/btn_design_blue">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back_white"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_below="@id/relativeimg"
+        android:id="@+id/titleTask"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="title Task"
+        android:textColor="#3F414E"
+        android:textSize="26dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_below="@id/titleTask"
+        android:id="@+id/date"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="date"
+        android:textColor="#5B5B5B"
+        android:textSize="10dp"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:layout_below="@id/date"
+        android:id="@+id/desc"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="desc"
+        android:textColor="#A1A4B2"
+        android:textSize="16dp" />
+
+    <TextView
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnAdd"
+        android:gravity="center"
+        android:layout_below="@+id/card_input_tgl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Task Done"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/btn_design_main"
+        android:layout_marginTop="10dp">
+    </TextView>
+    <TextView
+        android:id="@+id/btndelete"
+        android:gravity="center"
+        android:layout_above="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete task"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/btn_design_red"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/btnEdit"
+        android:gravity="center"
+        android:layout_above="@+id/btndelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit task"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/btn_design_main"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+</RelativeLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MenuAdmin.DetailCandidateActivity">
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detial Candidate"
+            android:textColor="#3F414E"
+            android:textSize="18dp"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Biodata"
+        android:textColor="#3F414E"
+        android:textSize="28dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/name"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detial Candidate"
+        android:textColor="#3F414E"
+        android:textSize="18dp"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/gender"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detial Candidate"
+        android:textColor="#3F414E"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/dob"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detial Candidate"
+        android:textColor="#3F414E"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/email"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detial Candidate"
+        android:textColor="#3F414E"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/noHP"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detial Candidate"
+        android:textColor="#3F414E"
+        android:textSize="18dp"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/alamat"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detial Candidate"
+        android:textColor="#3F414E"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preview CV :"
+        android:textColor="#3F414E"
+        android:textSize="28dp"
+        android:textStyle="bold"/>
+    <ImageView
+        android:layout_margin="20dp"
+        android:id="@+id/imgcv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+
+</LinearLayout>

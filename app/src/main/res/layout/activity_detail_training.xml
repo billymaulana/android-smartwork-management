@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuEmployee.DetailTrainingActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeimg"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/ic_training">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back_white"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/relativeimg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/titleTask"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="title Task"
+            android:textColor="#3F414E"
+            android:textSize="26dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_below="@id/titleTask"
+            android:id="@+id/desc"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Deskripsi pekerjaan:\n\n - Memberikan advise terkait dengan strategi pemasaran \n pada properti customer. \n - Membuat laporan rutin bulanan \n - Kesempatan untuk menjadi marketing dari developer \n kenamaan"
+            android:textColor="#5B5B5B"
+            android:textSize="15dp"
+            android:paddingBottom="100dp"/>
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <TextView
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apply"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_design_main"
+        android:textColor="#fff"
+        android:padding="15dp"
+        android:layout_margin="20dp"></TextView>
+
+
+
+</RelativeLayout>

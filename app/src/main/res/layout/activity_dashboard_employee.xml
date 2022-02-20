@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuEmployee.DashboardEmployeeActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linear_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SmartWork"
+                android:textColor="#3F414E"
+                android:textSize="18dp"/>
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logout"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/txWaktu"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Good Morning"
+            android:textColor="#3F414E"
+            android:textSize="28dp"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We Wish you have a good day"
+            android:textColor="#3F414E"
+            android:textSize="16dp"
+            android:layout_marginLeft="20dp"
+            android:textStyle="italic"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/card_work"
+        android:layout_below="@+id/linear_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+        <RelativeLayout
+            android:id="@+id/work"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_card_work">
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/employee"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_card_employee">
+        </RelativeLayout>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/btnTraining"
+        android:gravity="center"
+        android:layout_below="@+id/card_work"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_training_assesment">
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/btnAbsen"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_btn_absen"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true">
+    </RelativeLayout>
+
+</RelativeLayout>
