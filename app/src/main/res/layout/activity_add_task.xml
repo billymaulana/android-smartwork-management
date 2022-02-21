@@ -36,7 +36,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         app:cardCornerRadius="10dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="300dp"
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <LinearLayout
@@ -126,6 +126,7 @@
         android:paddingBottom="10dp"
         android:background="@drawable/btn_design_main"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_above="@+id/home_dash">
     </TextView>
 

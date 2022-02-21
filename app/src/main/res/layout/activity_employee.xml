@@ -28,6 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Employee Corner"
+            android:textStyle="bold"
+            android:layout_marginRight="40dp"
             android:textColor="#3F414E"
             android:textSize="18dp"/>
     </LinearLayout>
@@ -50,6 +52,7 @@
         android:text="your name"
         android:textColor="#2466C7"
         android:textSize="35dp"
+        android:textAllCaps="true"
         android:layout_marginLeft="20dp"
         android:textStyle="bold"/>
     <LinearLayout
@@ -124,12 +127,13 @@
             <TextView
                 android:gravity="center"
                 android:id="@+id/count_task"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="17dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
                 android:textColor="#ffffff"
-                android:textSize="40dp"
+                android:textSize="50dp"
+                android:textStyle="bold"
                 android:layout_marginLeft="40dp"/>
         </RelativeLayout>
     </RelativeLayout>
@@ -169,12 +173,13 @@
             <TextView
                 android:gravity="center"
                 android:id="@+id/hitAbsen"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="17dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:textStyle="bold"
                 android:textColor="#ffffff"
-                android:textSize="40dp"
+                android:textSize="50dp"
                 android:layout_marginLeft="40dp"/>
         </RelativeLayout>
     </RelativeLayout>
@@ -257,7 +262,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/ic_soft_red"
-                android:layout_margin="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="90dp"
                 android:orientation="vertical">
                 <TextView
                     android:layout_marginTop="20dp"

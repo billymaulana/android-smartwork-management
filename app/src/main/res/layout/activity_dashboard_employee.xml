@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SmartWork"
+                android:textStyle="bold"
                 android:textColor="#3F414E"
                 android:textSize="18dp"/>
             <ImageView
