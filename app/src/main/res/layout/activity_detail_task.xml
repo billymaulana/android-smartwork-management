@@ -58,23 +58,22 @@
         android:textSize="16dp" />
 
     <TextView
-        android:layout_marginBottom="20dp"
-        android:layout_alignParentBottom="true"
         android:id="@+id/btnAdd"
-        android:gravity="center"
-        android:layout_below="@+id/card_input_tgl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Task Done"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
+        android:layout_below="@+id/card_input_tgl"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_design_green"
+        android:gravity="center"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:background="@drawable/btn_design_main"
-        android:layout_marginTop="10dp">
-    </TextView>
+        android:text="Task Done"
+        android:textColor="#ffffff"
+        android:textSize="20dp"></TextView>
     <TextView
         android:id="@+id/btndelete"
         android:gravity="center"

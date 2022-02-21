@@ -52,6 +52,7 @@
             android:paddingBottom="100dp"/>
     </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
     <TextView
         android:id="@+id/button"
         android:layout_width="match_parent"
