@@ -56,7 +56,7 @@ public class EmployeeActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.btnBack)
-    public void BackClick(){
+    public void btnBack(){
         Intent intent = new Intent(EmployeeActivity.this, DashboardEmployeeActivity.class);
         startActivity(intent);
     }
@@ -103,8 +103,8 @@ public class EmployeeActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @OnClick(R.id.Attedance)
     void AttedanceClick(){
-//        Intent intent = new Intent(this, MonthlyActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, AttedanceActivity.class);
+        startActivity(intent);
     }
 
 
