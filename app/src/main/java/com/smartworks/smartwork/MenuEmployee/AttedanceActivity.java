@@ -10,7 +10,6 @@ import com.smartworks.smartwork.R;
 import com.smartworks.smartwork.base.SmartworkFunction;
 import com.smartworks.smartwork.base.SmartworkPreference;
 import com.smartworks.smartwork.base.SmartworkApp;
-
 import butterknife.OnClick;
 import butterknife.BindView;
 import butterknife.ButterKnife;
