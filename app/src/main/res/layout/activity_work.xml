@@ -28,6 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Today Works"
+            android:textStyle="bold"
+            android:layout_marginRight="40dp"
             android:textColor="#3F414E"
             android:textSize="18dp"/>
 
