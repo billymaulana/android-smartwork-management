@@ -1,6 +1,5 @@
 package com.smartworks.smartwork.base.config;
 
-import com.smartworks.smartwork.base.config.request.RequestApply;
 import com.smartworks.smartwork.base.config.response.GeneralCountAbsenResponse;
 import com.smartworks.smartwork.base.config.response.GeneralCountResponse;
 import com.smartworks.smartwork.base.config.response.GeneralResponse;
@@ -9,15 +8,14 @@ import com.smartworks.smartwork.base.config.response.candidate.CandidateResponse
 import com.smartworks.smartwork.base.config.response.token.TokenResponse;
 import com.smartworks.smartwork.base.config.response.work.WorkResponse;
 
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
+import java.util.Map;
+
 import retrofit2.Call;
-import retrofit2.http.Body;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
-import retrofit2.http.Multipart;
 import retrofit2.http.POST;
-import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface SmartworkAPI {
@@ -100,9 +98,9 @@ public interface SmartworkAPI {
                                        @Query("deleted") String deleted,
                                        @Query("id_task") String id_task);
 
-    @Multipart
     @POST(uploadCv)
-    Call<GeneralResponse> upload  (@Body RequestApply requestApply);
+    @FormUrlEncoded
+    Call<GeneralResponse> upload (@FieldMap Map<String, String> requestApply);
 
 
 }

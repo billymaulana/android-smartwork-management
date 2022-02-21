@@ -29,6 +29,8 @@ import com.smartworks.smartwork.base.config.response.GeneralResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -110,23 +112,34 @@ public class ApplyActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.setMessage("mohon tunggu");
         progressDialog.show();
-        RequestApply requestApply = new RequestApply(
-                smartworkPreference.getToken(),
-                etnama.getText().toString(),
-                jk,
-                etdob.getText().toString(),
-                etEmail.getText().toString(),
-                etNohp.getText().toString(),
-                etAddres.getText().toString(),
-                baseimg
-        );
-        SmartworkApp.getApiSmartwork().upload(requestApply).enqueue(new Callback<GeneralResponse>() {
+//        RequestApply requestApply = new RequestApply(
+//                smartworkPreference.getToken(),
+//                etnama.getText().toString(),
+//                jk,
+//                etdob.getText().toString(),
+//                etEmail.getText().toString(),
+//                etNohp.getText().toString(),
+//                etAddres.getText().toString(),
+//                baseimg
+//        );
+
+        Map<String, String> request = new HashMap<>();
+        request.put("token", smartworkPreference.getToken());
+        request.put("nama", etnama.getText().toString());
+        request.put("jk", jk);
+        request.put("birthdate", etdob.getText().toString());
+        request.put("email", etEmail.getText().toString());
+        request.put("phone", etNohp.getText().toString());
+        request.put("address", etAddres.getText().toString());
+        request.put("cv", baseimg);
+
+        SmartworkApp.getApiSmartwork().upload(request).enqueue(new Callback<GeneralResponse>() {
             @Override
             public void onResponse(Call<GeneralResponse> call, Response<GeneralResponse> response) {
                 progressDialog.dismiss();
                 try {
                     if(response.body().getStatus().equals("success")){
-
+                        startActivity(new Intent(ApplyActivity.this, WebViewActivity.class));
                     }else{
                        // new SweetAlertDialog(ApplyActivity.this, SweetAlertDialog.ERROR_TYPE).setTitleText("Oops...").setContentText(response.body().getMessage()).show();
                     }
