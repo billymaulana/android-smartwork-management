@@ -177,7 +177,7 @@ public class ApplyActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeFile(cv);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
             byte[] imageBytes = byteArrayOutputStream.toByteArray();
-            baseimg = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+            baseimg = Base64.encodeToString(imageBytes, Base64.NO_WRAP);
             System.out.println("base64ktp" + baseimg);
         }
     }
