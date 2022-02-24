@@ -39,6 +39,8 @@ public class DetailTaskActivity extends AppCompatActivity {
     @Nullable @SuppressLint("NonConstantResourceId") @BindView(R.id.btnAdd) TextView btnAdd;
     @Nullable @SuppressLint("NonConstantResourceId") @BindView(R.id.btndelete) TextView btndelete;
     @Nullable @SuppressLint("NonConstantResourceId") @BindView(R.id.btnEdit) TextView btnEdit;
+    @Nullable @SuppressLint("NonConstantResourceId") @BindView(R.id.btnSuccess) TextView btnSuccess;
+
 
     String txTitle, txDesc, txDate,status,id;
     @Override
@@ -63,10 +65,13 @@ public class DetailTaskActivity extends AppCompatActivity {
             btnAdd.setVisibility(View.GONE);
             btndelete.setVisibility(View.GONE);
             btnEdit.setVisibility(View.GONE);
+            btnSuccess.setVisibility(View.VISIBLE);
         }else{
             btnAdd.setVisibility(View.VISIBLE);
             btndelete.setVisibility(View.VISIBLE);
             btnEdit.setVisibility(View.VISIBLE);
+            btnSuccess.setVisibility(View.GONE);
+
         }
     }
 
