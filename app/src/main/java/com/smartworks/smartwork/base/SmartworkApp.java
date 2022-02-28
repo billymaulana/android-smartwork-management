@@ -2,6 +2,9 @@ package com.smartworks.smartwork.base;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 
 import com.smartworks.smartwork.base.config.SmartworkAPI;
 
@@ -22,11 +25,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @SuppressLint("Registered")
 public class SmartworkApp extends Application {
 
+    public static final String CHANNEL_ID = "SMARTWORK_ALARM_CHANNEL";
+
     @Override
     public void onCreate() {
         super.onCreate();
         //FirebaseApp.initializeApp(this);
         ApplicationStarter.initialize(this, true);
+        createNotificationChannnel();
     }
 
     public static SmartworkAPI getApiSmartwork() {
@@ -57,5 +63,18 @@ public class SmartworkApp extends Application {
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(getInterceptorLevel());
         return httpLoggingInterceptor;
+    }
+
+    private void createNotificationChannnel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel serviceChannel = new NotificationChannel(
+                    CHANNEL_ID,
+                    "ToDoListApp Alarm Service Channel",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(serviceChannel);
+        }
     }
 }

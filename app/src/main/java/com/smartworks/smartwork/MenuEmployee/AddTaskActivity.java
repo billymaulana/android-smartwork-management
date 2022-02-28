@@ -1,11 +1,18 @@
 package com.smartworks.smartwork.MenuEmployee;
 
+import static com.smartworks.smartwork.alarm.AlarmBroadcastReceiver.TITLE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,11 +20,15 @@ import com.smartworks.smartwork.MainMenu.LoginActivity;
 import com.smartworks.smartwork.MenuAdmin.DashboardAdminActivity;
 import com.smartworks.smartwork.MenuAdmin.DetailWorkActivity;
 import com.smartworks.smartwork.R;
+import com.smartworks.smartwork.alarm.AlarmBroadcastReceiver;
 import com.smartworks.smartwork.base.SmartworkApp;
 import com.smartworks.smartwork.base.SmartworkFunction;
 import com.smartworks.smartwork.base.SmartworkPreference;
 import com.smartworks.smartwork.base.config.response.GeneralResponse;
 import com.smartworks.smartwork.base.config.response.GeneralResponseLogin;
+
+import java.util.Calendar;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -104,12 +115,28 @@ public class AddTaskActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Mohon Tunggu...");
         progressDialog.show();
-        SmartworkApp.getApiSmartwork().Task(smartworkPreference.getToken(),Action,etTask.getText().toString(),etDesc.getText().toString(), status, ettgl.getText().toString()).enqueue(new Callback<GeneralResponse>() {
+        String[] tgl = ettgl.getText().toString().split(" ");
+
+        // Get Date
+        String[] tgl1 = tgl[0].split("-");
+        int year = Integer.parseInt(tgl1[2]);
+        int month = Integer.parseInt(tgl1[1]);
+        int date = Integer.parseInt(tgl1[0]);
+
+        // Get Time
+        String[] tgl2 = tgl[1].split(":");
+        int hour = Integer.parseInt(tgl2[0]);
+        int minute = Integer.parseInt(tgl2[1]);
+
+        SmartworkApp.getApiSmartwork().Task(smartworkPreference.getToken(),Action,etTask.getText().toString(),etDesc.getText().toString(), status, tgl[0]).enqueue(new Callback<GeneralResponse>() {
             @Override
             public void onResponse(Call<GeneralResponse> call, Response<GeneralResponse> response) {
                 progressDialog.dismiss();
                 try {
                     if(response.body().getStatus().equals("success")){
+
+                        scheduleAlarm(AddTaskActivity.this, etTask.getText().toString(), year, month, date, hour, minute);
+
                         new SweetAlertDialog(AddTaskActivity.this, SweetAlertDialog.SUCCESS_TYPE)
                                 .setTitleText("Sukses...")
                                 .setContentText("Task Berhasil Dibuat!")
@@ -182,5 +209,40 @@ public class AddTaskActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    private void scheduleAlarm(Context context, String title, int year, int month, int date, int hour, int minute){
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
+        Intent alarmIntent = new Intent(context, AlarmBroadcastReceiver.class);
+        alarmIntent.putExtra(TITLE, title);
+        int id = new Random().nextInt(Integer.MAX_VALUE);
+        PendingIntent alarmPendingIntent = PendingIntent.getBroadcast(context, id, alarmIntent, 0);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.DAY_OF_MONTH, date);
+        calendar.set(Calendar.HOUR_OF_DAY, hour);
+        calendar.set(Calendar.MINUTE, minute);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            alarmManager.setExact(
+                    AlarmManager.RTC_WAKEUP,
+                    calendar.getTimeInMillis(),
+                    alarmPendingIntent
+            );
+        }
+    }
+
+//    private void cancelAlarm(int reminderId) {
+//        AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+//        Intent intent = new Intent(getApplicationContext(), AlarmBroadcastReceiver.class);
+//        PendingIntent alarmPendingIntent = PendingIntent.getBroadcast(getApplicationContext(), reminderId, intent, 0);
+//        alarmPendingIntent.cancel();
+//        alarmManager.cancel(alarmPendingIntent);
+//    }
 
 }

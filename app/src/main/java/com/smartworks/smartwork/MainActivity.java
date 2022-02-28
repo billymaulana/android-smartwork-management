@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.smartworks.smartwork.MainMenu.LoginActivity;
 import com.smartworks.smartwork.MainMenu.RegistActivity;
+import com.smartworks.smartwork.alarm.AlarmService;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -19,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        if(getIntent().getBooleanExtra("playNotifSound", false)){
+            Intent intentService = new Intent(getApplicationContext(), AlarmService.class);
+            getApplicationContext().stopService(intentService);
+        }
     }
 
     @SuppressLint("NonConstantResourceId")
